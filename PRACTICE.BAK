@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<conio.h>
+int a[10]={71,72,73,74,75,76,77,78,79,80};
+int g,mid,low=0,high=9;
+void bs(void);
+void main()
+{
+clrscr();
+scanf("%d",&g);
+bs();
+getch();
+}
+
+void bs()
+{
+if(low!=high)
+{
+mid=(low+high)/2;
+if(a[mid]==g)
+{
+printf("%d volue found at %d",g,mid);
+}
+else
+{
+	if(a[mid]<g)
+	{
+	low=mid+1;
+	bs();
+	}
+	if(a[mid]>g)
+	{
+	high=mid-1;
+	bs();
+	}
+	}
+	}
+else
+{
+printf("Value not found");
+}
+}
